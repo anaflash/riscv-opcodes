@@ -1,0 +1,12 @@
+# KUCIF eFlash-PIM custom-0 opcode (0x0b) instructions.
+# See docs/kucif_isa.md section 2 in anaflash-pim-compiler for the ISA source.
+# funct3-dispatched, S-type encoding (imm12hi/rs1/rs2/imm12lo unused as
+# variable operands are always emitted as 0 by the current compiler/runtime,
+# but are kept general here to match the S-type instruction shape).
+pim_erase      imm12hi rs1 rs2 imm12lo 14..12=1 6..2=0x02 1..0=3
+pim_program    imm12hi rs1 rs2 imm12lo 14..12=2 6..2=0x02 1..0=3
+pim_read       imm12hi rs1 rs2 imm12lo 14..12=3 6..2=0x02 1..0=3
+pim_loadraw    imm12hi rs1 rs2 imm12lo 14..12=4 6..2=0x02 1..0=3
+pim_parallel   imm12hi rs1 rs2 imm12lo 14..12=5 6..2=0x02 1..0=3
+pim_rbr        imm12hi rs1 rs2 imm12lo 14..12=6 6..2=0x02 1..0=3
+pim_load       imm12hi rs1 rs2 imm12lo 14..12=7 6..2=0x02 1..0=3
